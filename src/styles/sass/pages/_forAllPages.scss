@@ -1,0 +1,7 @@
+.page__section {
+  display: flex;
+  .table__section {
+    width: calc(100% - 100px);
+    height: 100vh;
+  }
+}

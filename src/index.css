@@ -1,13 +1,235 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: #eff1f3;
 }
+
+.flex_nav, .navbar .bottom_navbar, .navbar .top_navbar .top_navbar_div, .navbar .top_navbar, .navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar {
+  width: 80px;
+  height: 100vh;
+  justify-content: space-between;
+  background-color: #23262f;
+  padding: 20px 0;
+}
+.navbar .nav_button {
+  position: absolute;
+  background-color: #23262f;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  left: 78.5px;
+}
+.navbar .nav_button::before {
+  width: 10px;
+  height: 10px;
+  aspect-ratio: 1;
+  top: -9px;
+  left: 21px;
+  content: "";
+  position: absolute;
+  background-image: radial-gradient(circle at 100% 0, #eff1f3 10px, #23262f 10px);
+}
+.navbar .nav_button::after {
+  width: 10px;
+  height: 10px;
+  aspect-ratio: 1;
+  bottom: -9px;
+  left: 21px;
+  content: "";
+  position: absolute;
+  background-image: radial-gradient(circle at 100% 100%, #eff1f3 10px, #23262f 10px);
+}
+.navbar .navbar_btn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  color: #858585;
+  border: none;
+  transition: linear all 50ms;
+  font-size: 10px;
+}
+.navbar .navbar_btn:hover {
+  border-left: 3px solid #45b26b;
+  color: #fff;
+}
+.navbar .top_navbar {
+  gap: 45px;
+  width: 100%;
+}
+.navbar .top_navbar .top_navbar_div {
+  gap: 30px;
+  width: 100%;
+}
+.navbar .bottom_navbar {
+  gap: 20px;
+  color: #fff;
+  width: 100%;
+  border-top: 1px solid #6d6585;
+  padding: 20px 0;
+}
+
+.btn, .table__section .tabs .tabs__search .tabs__search__buttons button, .table__section .tabs .tabs__buttons .tabs__userBtn {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 5px;
+  border-radius: 7px;
+  border: none;
+}
+
+.table__section .tabs {
+  margin-top: 40px;
+}
+.table__section .tabs button {
+  cursor: pointer;
+}
+.table__section .tabs .tabs__buttons {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  margin-left: 45px;
+}
+.table__section .tabs .tabs__buttons .tabs__leftDiv {
+  display: flex;
+  gap: 10px;
+}
+.table__section .tabs .tabs__buttons .tabs__leftDiv .leftDiv__btn {
+  width: 173px;
+  height: 28px;
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  border: none;
+  border-right: 1px solid #000;
+}
+.table__section .tabs .tabs__buttons .tabs__leftDiv .leftDiv__btn__light {
+  background: #fff;
+  border: none;
+  border-radius: 15px 15px 0 0;
+  position: relative;
+}
+.table__section .tabs .tabs__buttons .tabs__leftDiv .leftDiv__btn__light::before,
+.table__section .tabs .tabs__buttons .tabs__leftDiv .leftDiv__btn__light::after {
+  width: 11px;
+  height: 11px;
+  background: #fff;
+  content: "";
+  position: absolute;
+  aspect-ratio: 1;
+  bottom: 0;
+  z-index: -1;
+}
+.table__section .tabs .tabs__buttons .tabs__leftDiv .leftDiv__btn__light::before {
+  left: -11px;
+  background-image: radial-gradient(circle at 0px 0px, #eff1f3 10px, #fff 10px);
+}
+.table__section .tabs .tabs__buttons .tabs__leftDiv .leftDiv__btn__light::after {
+  right: -11.5px;
+  background-image: radial-gradient(circle at 10px 0, #eff1f3 10px, #fff 10px);
+}
+.table__section .tabs .tabs__buttons .tabs__leftDiv .light_1 {
+  border: none;
+}
+.table__section .tabs .tabs__buttons .tabs__userBtn {
+  background: #23262f;
+  border: none;
+  height: 25px;
+  margin-bottom: 5px;
+}
+.table__section .tabs .tabs__search {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 20px;
+  margin-top: -1px;
+}
+.table__section .tabs .tabs__search .tabs__search__input {
+  position: relative;
+}
+.table__section .tabs .tabs__search .tabs__search__input img {
+  position: absolute;
+  z-index: 2;
+  top: 2px;
+}
+.table__section .tabs .tabs__search .tabs__search__input input {
+  width: 320px;
+  height: 30px;
+  padding: 0 24px;
+  border: none;
+  border-right: 1px solid #000;
+}
+.table__section .tabs .tabs__search .tabs__search__input input:focus {
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+.table__section .tabs .tabs__search .tabs__search__input .arrow__icon {
+  right: 15px;
+}
+.table__section .tabs .tabs__search .tabs__search__buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 10px;
+}
+.table__section .tabs .tabs__search .tabs__search__buttons .add_Specialization {
+  background: #45b26b;
+}
+.table__section .tabs .tabs__search .tabs__search__buttons .four__divs__btn {
+  width: 33px;
+  height: 33px;
+  display: grid;
+  gap: 1px;
+  padding-top: 10px;
+  padding-left: 10px;
+  grid-template-columns: 48% 48%;
+  grid-template-rows: 48% 48%;
+}
+.table__section .tabs .tabs__search .tabs__search__buttons .four__divs__btn div {
+  width: 100%;
+  height: 100%;
+  background: #45b26b;
+  border-radius: 2px;
+}
+.table__section .tabs .tabs__search .tabs__search__buttons .two__divs__btn {
+  width: 33px;
+  height: 33px;
+  display: grid;
+  gap: 1px;
+  grid-template-columns: 110%;
+  grid-template-rows: 50% 50%;
+  background: transparent;
+}
+.table__section .tabs .tabs__search .tabs__search__buttons .two__divs__btn div {
+  width: 100%;
+  height: 100%;
+  background: rgb(114, 114, 114);
+  border-radius: 3px;
+}
+
+.page__section {
+  display: flex;
+}
+.page__section .table__section {
+  width: calc(100% - 100px);
+  height: 100vh;
+}
+
+/*# sourceMappingURL=index.css.map */

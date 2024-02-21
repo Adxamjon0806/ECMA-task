@@ -1,0 +1,148 @@
+@import "../abstracts/variables";
+@import "../components/button";
+
+.table__section {
+  .tabs {
+    margin-top: 40px;
+    button {
+      cursor: pointer;
+    }
+    .tabs__buttons {
+      display: flex;
+      gap: 9px;
+      align-items: center;
+      margin-left: 45px;
+      .tabs__leftDiv {
+        display: flex;
+        gap: 10px;
+        .leftDiv__btn {
+          width: 173px;
+          height: 28px;
+          padding: 7px 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background-color: transparent;
+          border: none;
+          border-right: 1px solid #000;
+        }
+        .leftDiv__btn__light {
+          background: #fff;
+          border: none;
+          border-radius: 15px 15px 0 0;
+          position: relative;
+        }
+        .leftDiv__btn__light::before,
+        .leftDiv__btn__light::after {
+          width: 11px;
+          height: 11px;
+          background: #fff;
+          content: "";
+          position: absolute;
+          aspect-ratio: 1;
+          bottom: 0;
+          z-index: -1;
+        }
+        .leftDiv__btn__light::before {
+          left: -11px;
+          background-image: radial-gradient(
+            circle at 0px 0px,
+            $body__background 10px,
+            #fff 10px
+          );
+        }
+        .leftDiv__btn__light::after {
+          right: -11.5px;
+          background-image: radial-gradient(
+            circle at 10px 0,
+            $body__background 10px,
+            #fff 10px
+          );
+        }
+        .light_1 {
+          border: none;
+        }
+      }
+      .tabs__userBtn {
+        @extend .btn;
+        background: $nav__background__color;
+        border: none;
+        height: 25px;
+        margin-bottom: 5px;
+      }
+    }
+    .tabs__search {
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4px 20px;
+      margin-top: -1px;
+      .tabs__search__input {
+        position: relative;
+        img {
+          position: absolute;
+          z-index: 2;
+          top: 2px;
+        }
+        input {
+          width: 320px;
+          height: 30px;
+          padding: 0 24px;
+          border: none;
+          border-right: 1px solid #000;
+        }
+        input:focus {
+          border: 1px solid #000;
+          border-radius: 5px;
+        }
+        .arrow__icon {
+          right: 15px;
+        }
+      }
+      .tabs__search__buttons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-right: 10px;
+        button {
+          @extend .btn;
+        }
+        .add_Specialization {
+          background: $green__color;
+        }
+        .four__divs__btn {
+          width: 33px;
+          height: 33px;
+          display: grid;
+          gap: 1px;
+          padding-top: 10px;
+          padding-left: 10px;
+          grid-template-columns: 48% 48%;
+          grid-template-rows: 48% 48%;
+          div {
+            width: 100%;
+            height: 100%;
+            background: $green__color;
+            border-radius: 2px;
+          }
+        }
+        .two__divs__btn {
+          width: 33px;
+          height: 33px;
+          display: grid;
+          gap: 1px;
+          grid-template-columns: 110%;
+          grid-template-rows: 50% 50%;
+          background: transparent;
+          div {
+            width: 100%;
+            height: 100%;
+            background: rgb(114, 114, 114);
+            border-radius: 3px;
+          }
+        }
+      }
+    }
+  }
+}

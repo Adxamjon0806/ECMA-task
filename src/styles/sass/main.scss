@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import "./abstracts/variables";
+
+body {
+  background-color: $body__background;
+}
+
+@import "./layout/navbar";
+@import "./layout//tabsSection";
+@import "./pages/forAllPages";

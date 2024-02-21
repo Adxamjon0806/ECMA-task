@@ -1,0 +1,87 @@
+@import "../abstracts/variables";
+
+.flex_nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar {
+  @extend .flex_nav;
+  width: 80px;
+  height: 100vh;
+  justify-content: space-between;
+  background-color: $nav__background__color;
+  padding: 20px 0;
+  .nav_button {
+    position: absolute;
+    background-color: $nav__background__color;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    left: 78.5px;
+  }
+  .nav_button::before {
+    width: 10px;
+    height: 10px;
+    aspect-ratio: 1;
+    top: -9px;
+    left: 21px;
+    content: "";
+    position: absolute;
+    background-image: radial-gradient(
+      circle at 100% 0,
+      $body__background 10px,
+      $nav__background__color 10px
+    );
+  }
+  .nav_button::after {
+    width: 10px;
+    height: 10px;
+    aspect-ratio: 1;
+    bottom: -9px;
+    left: 21px;
+    content: "";
+    position: absolute;
+    background-image: radial-gradient(
+      circle at 100% 100%,
+      $body__background 10px,
+      $nav__background__color 10px
+    );
+  }
+  .navbar_btn {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    color: #858585;
+    border: none;
+    transition: linear all 50ms;
+    font-size: 10px;
+  }
+  .navbar_btn:hover {
+    border-left: 3px solid $green__color;
+    color: #fff;
+  }
+  .top_navbar {
+    @extend .flex_nav;
+    gap: 45px;
+    width: 100%;
+    .top_navbar_div {
+      @extend .flex_nav;
+      gap: 30px;
+      width: 100%;
+    }
+  }
+  .bottom_navbar {
+    @extend .flex_nav;
+    gap: 20px;
+    color: #fff;
+    width: 100%;
+    border-top: 1px solid #6d6585;
+    padding: 20px 0;
+  }
+}
