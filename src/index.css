@@ -29,7 +29,8 @@ body {
   height: 40px;
   border-radius: 50%;
   border: none;
-  left: 78.5px;
+  left: 58.5px;
+  top: 15px;
 }
 .navbar .nav_button::before {
   width: 10px;
@@ -93,7 +94,7 @@ body {
 }
 
 .table__section .tabs {
-  margin-top: 40px;
+  margin-top: 35px;
 }
 .table__section .tabs button {
   cursor: pointer;
@@ -228,7 +229,7 @@ body {
   display: flex;
 }
 .page__section .table__section {
-  width: calc(100% - 100px);
+  width: calc(100% - 80px);
   height: 100vh;
 }
 
