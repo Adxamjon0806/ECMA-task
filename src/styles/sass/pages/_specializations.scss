@@ -1,0 +1,109 @@
+@import "../abstracts/variables";
+@import "../components/button";
+
+.specializations {
+  width: 100%;
+  padding: 20px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  .left_div,
+  .right_div {
+    width: 50%;
+    height: 560px;
+    background: #fff;
+    padding: 15px;
+    color: #fff;
+    border-radius: 15px;
+    .title_div {
+      width: 100%;
+      padding: 10px 20px;
+      background: $nav__background__color;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+  }
+  .left_div {
+    .specializations__list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .list__index__spec {
+        @extend .specializations__list;
+        gap: 15px;
+      }
+      .list__infos {
+        @extend .specializations__list;
+        gap: 50px;
+        text-align: start;
+        .degree,
+        .noDegree {
+          font-size: 11px;
+        }
+        .degree {
+          color: #000;
+          width: 60px;
+        }
+        .noDegree {
+          color: gray;
+        }
+        .active,
+        .inActive {
+          display: flex;
+          justify-content: center;
+          font-size: 11px;
+          color: #fff;
+          padding: 3px 0;
+          width: 70px;
+        }
+        .active {
+          background: $green__color;
+        }
+        .inActive {
+          background: $red__color;
+        }
+        .action_btn {
+          padding: 3px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      .list__infos__item {
+        gap: 30px;
+      }
+    }
+    .item {
+      background: $body__background;
+      color: #000;
+      transition: linear all 150ms;
+    }
+    .item:hover {
+      background: $body__background_2;
+    }
+    .itemsOfSpecializations {
+      width: 102%;
+      padding: 0 5px 0 0;
+      height: 493px;
+      overflow-y: scroll;
+    }
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgb(171, 171, 171);
+      border-radius: 10px;
+      transition: linear all 150ms;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgb(101, 101, 101);
+    }
+  }
+  .right_div {
+    .module_div {
+      background: $body__background;
+      color: #000;
+    }
+  }
+}

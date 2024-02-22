@@ -12,7 +12,7 @@
   height: 100vh;
   justify-content: space-between;
   background-color: $nav__background__color;
-  padding: 20px 0;
+  padding: 15px 0;
   .nav_button {
     position: absolute;
     background-color: $nav__background__color;
@@ -22,7 +22,7 @@
     border-radius: 50%;
     border: none;
     left: 58.5px;
-    top: 15px;
+    top: 11px;
   }
   .nav_button::before {
     width: 10px;

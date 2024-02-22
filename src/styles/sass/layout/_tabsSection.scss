@@ -3,7 +3,7 @@
 
 .table__section {
   .tabs {
-    margin-top: 35px;
+    margin-top: 30px;
     button {
       cursor: pointer;
     }
@@ -109,7 +109,9 @@
           @extend .btn;
         }
         .add_Specialization {
+          @extend .btn;
           background: $green__color;
+          text-decoration: none;
         }
         .four__divs__btn {
           width: 33px;

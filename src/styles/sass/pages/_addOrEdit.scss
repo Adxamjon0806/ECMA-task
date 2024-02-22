@@ -1,0 +1,58 @@
+@import "../abstracts/variables";
+@import "../components/button";
+
+.specializations {
+  .addOrEdit {
+    height: 500px;
+    color: #000;
+  }
+  .left {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    gap: 10px;
+    input {
+      background: $body__background;
+      border: 1px solid rgb(189, 189, 189);
+      border-radius: 5px;
+      padding: 5px;
+    }
+    .desc_input {
+      height: 48px;
+    }
+  }
+  .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    overflow-y: scroll;
+    .right_modules {
+      position: relative;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      padding: 0 0 0 20px;
+      width: 200px;
+      height: 87px;
+      background: $nav__background__color;
+      color: #fff;
+      font-size: 17px;
+      border-radius: 9px;
+    }
+  }
+}
+
+.addOrEdit__Chekkers {
+  width: 100%;
+  height: 55px;
+  padding: 15px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+  .button {
+    @extend .btn;
+  }
+}
