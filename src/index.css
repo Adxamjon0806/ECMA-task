@@ -83,7 +83,7 @@ body {
   padding: 20px 0;
 }
 
-.btn, .addOrEdit__Chekkers .button, .specializations .addOrEdit .modules_list .addOrEdit_modules .button, .table__section .tabs .tabs__search .tabs__search__buttons .add_Specialization, .table__section .tabs .tabs__search .tabs__search__buttons button, .table__section .tabs .tabs__buttons .tabs__userBtn {
+.btn, .addOrEdit__Chekkers .button, .specializations .addOrEdit .clear_all .clear_all_btn, .specializations .addOrEdit .modules_list .addOrEdit_modules .button, .table__section .tabs .tabs__search .tabs__search__buttons .add_Specialization, .table__section .tabs .tabs__search .tabs__search__buttons button, .table__section .tabs .tabs__buttons .tabs__userBtn {
   color: #fff;
   display: flex;
   align-items: center;
@@ -235,7 +235,7 @@ body {
   height: 100vh;
 }
 
-.btn, .addOrEdit__Chekkers .button, .specializations .addOrEdit .modules_list .addOrEdit_modules .button, .table__section .tabs .tabs__buttons .tabs__userBtn, .table__section .tabs .tabs__search .tabs__search__buttons button, .table__section .tabs .tabs__search .tabs__search__buttons .add_Specialization {
+.btn, .addOrEdit__Chekkers .button, .specializations .addOrEdit .clear_all .clear_all_btn, .specializations .addOrEdit .modules_list .addOrEdit_modules .button, .table__section .tabs .tabs__buttons .tabs__userBtn, .table__section .tabs .tabs__search .tabs__search__buttons button, .table__section .tabs .tabs__search .tabs__search__buttons .add_Specialization {
   color: #fff;
   display: flex;
   align-items: center;
@@ -348,7 +348,7 @@ body {
   color: #000;
 }
 
-.btn, .addOrEdit__Chekkers .button, .specializations .addOrEdit .modules_list .addOrEdit_modules .button, .table__section .tabs .tabs__buttons .tabs__userBtn, .table__section .tabs .tabs__search .tabs__search__buttons button, .table__section .tabs .tabs__search .tabs__search__buttons .add_Specialization {
+.btn, .addOrEdit__Chekkers .button, .specializations .addOrEdit .clear_all .clear_all_btn, .specializations .addOrEdit .modules_list .addOrEdit_modules .button, .table__section .tabs .tabs__buttons .tabs__userBtn, .table__section .tabs .tabs__search .tabs__search__buttons button, .table__section .tabs .tabs__search .tabs__search__buttons .add_Specialization {
   color: #fff;
   display: flex;
   align-items: center;
@@ -364,9 +364,13 @@ body {
   color: #000;
 }
 .specializations .addOrEdit .modules_list {
-  width: 100%;
+  position: relative;
+  left: -15px;
+  width: 104.5%;
   height: 60%;
   overflow-y: scroll;
+  border-top: 1px solid rgb(213, 213, 213);
+  border-bottom: 1px solid rgb(213, 213, 213);
 }
 .specializations .addOrEdit .modules_list .addOrEdit_modules {
   width: 100%;
@@ -390,6 +394,15 @@ body {
 }
 .specializations .addOrEdit ::-webkit-scrollbar-thumb:hover {
   background: rgb(101, 101, 101);
+}
+.specializations .addOrEdit .clear_all {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.specializations .addOrEdit .clear_all .clear_all_btn {
+  color: #3772ff;
+  background: rgb(234, 240, 255);
 }
 .specializations .left {
   display: flex;

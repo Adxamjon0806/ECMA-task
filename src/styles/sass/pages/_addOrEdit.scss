@@ -6,9 +6,13 @@
     height: 500px;
     color: #000;
     .modules_list {
-      width: 100%;
+      position: relative;
+      left: -15px;
+      width: 104.5%;
       height: 60%;
       overflow-y: scroll;
+      border-top: 1px solid rgb(213, 213, 213);
+      border-bottom: 1px solid rgb(213, 213, 213);
       .addOrEdit_modules {
         width: 100%;
         display: flex;
@@ -35,6 +39,16 @@
     }
     ::-webkit-scrollbar-thumb:hover {
       background: rgb(101, 101, 101);
+    }
+    .clear_all {
+      width: 100%;
+      display: flex;
+      justify-content: end;
+      .clear_all_btn {
+        @extend .btn;
+        color: #3772ff;
+        background: rgb(234, 240, 255);
+      }
     }
   }
   .left {

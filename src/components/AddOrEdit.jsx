@@ -24,7 +24,6 @@ const AddOrEdit = () => {
           <input type="text" />
           <label htmlFor="">Description</label>
           <input type="text" className="desc_input" />
-          <hr />
           <div className="modules_list">
             {modulesAdd.map((module) => (
               <div key={module} className="addOrEdit_modules">
@@ -37,6 +36,9 @@ const AddOrEdit = () => {
                 </button>
               </div>
             ))}
+          </div>
+          <div className="clear_all">
+            <button className="clear_all_btn">Clear all</button>
           </div>
         </div>
         <div className="left_div addOrEdit right">
