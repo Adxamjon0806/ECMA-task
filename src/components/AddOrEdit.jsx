@@ -7,19 +7,14 @@ import dots_6 from "../assets/dots_6.png";
 import trash_delete from "../assets/trash-delete-bin-2.png";
 
 const AddOrEdit = () => {
-  const { modules } = useCourses();
-  const [modulesAdd, setModulesAdd] = useState([]);
+  const { modules, modulesAdd, setModulesAdd } = useCourses();
   const [isDegree, setIsDegree] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
   function deleteItem(module) {
-    const findIndex = modulesAdd.indexOf(module);
-    console.log(findIndex);
-    modulesAdd.splice(findIndex, 1);
-    setModulesAdd([...modulesAdd]);
+    const filteredArr = modulesAdd.filter((el) => el.id !== module.id);
+    setModulesAdd(filteredArr);
   }
-
-  console.log(modulesAdd);
 
   return (
     <>
@@ -32,12 +27,12 @@ const AddOrEdit = () => {
           <hr />
           <div className="modules_list">
             {modulesAdd.map((module) => (
-              <div className="addOrEdit_modules">
+              <div key={module} className="addOrEdit_modules">
                 <div className="modules_dot_module">
                   <img src={dots_6} alt="6 dots" />
-                  <p>{module}</p>
+                  <p>{module.name}</p>
                 </div>
-                <button className="btn" onClick={() => deleteItem()}>
+                <button className="btn" onClick={() => deleteItem(module)}>
                   <img src={trash_delete} alt="delte icon" />
                 </button>
               </div>
@@ -45,14 +40,11 @@ const AddOrEdit = () => {
           </div>
         </div>
         <div className="left_div addOrEdit right">
-          {modules.map((course, i) => (
-            <RightModules
-              key={i}
-              course={course}
-              modulesAdd={modulesAdd}
-              setModulesAdd={setModulesAdd}
-            />
-          ))}
+          {modules.map((course) => {
+            const filtered = modulesAdd.filter((el) => el.id === course.id);
+            const isIn = filtered.length === 1 ? true : false;
+            return <RightModules key={course.id} course={course} isIn={isIn} />;
+          })}
         </div>
       </section>
       <hr />
