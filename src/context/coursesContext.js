@@ -1,33 +1,18 @@
-import { createContext, useContext, useReducer, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 const coursesContext = createContext();
 
-function reducer(state, action) {}
-
 const initialState = [
   {
-    Specialization: "Foundation",
     Info: true,
+    Specialization: "Frontend",
     Status: true,
-    modules: ["Foundation", "Frontend", "Python Backend", "C#"],
-  },
-  {
-    Specialization: "Foundation",
-    Info: true,
-    Status: true,
-    modules: ["Foundation", "Frontend", "Java Backend", "Python Backend"],
-  },
-  {
-    Specialization: "Foundation",
-    Info: true,
-    Status: true,
-    modules: ["Foundation", "Frontend", "Java Backend", "Python Backend", "C#"],
-  },
-  {
-    Specialization: "Foundation",
-    Info: true,
-    Status: true,
-    modules: ["Foundation", "Frontend", "Java Backend"],
+    description: "This is Frontend course",
+    modules: [
+      { id: 1, name: "Java Development", isActive: false },
+      { id: 5, name: "Java Backend", isActive: true },
+      { id: 9, name: ".NET", isActive: true },
+    ],
   },
 ];
 
@@ -47,15 +32,18 @@ const modules = [
   { id: 13, name: "Jango", isActive: true },
   { id: 14, name: "Python Development", isActive: false },
   { id: 15, name: ".NET", isActive: true },
+  { id: 16, name: "Jango", isActive: true },
+  { id: 17, name: "Python Development", isActive: false },
+  { id: 18, name: ".NET", isActive: true },
 ];
 
 const CoursesProvider = ({ children }) => {
-  const [courses, dispatchCourses] = useReducer(reducer, initialState);
+  const [courses, setCourses] = useState(initialState);
   const [modulesAdd, setModulesAdd] = useState([]);
 
   return (
     <coursesContext.Provider
-      value={{ courses, dispatchCourses, modules, modulesAdd, setModulesAdd }}
+      value={{ courses, setCourses, modules, modulesAdd, setModulesAdd }}
     >
       {children}
     </coursesContext.Provider>

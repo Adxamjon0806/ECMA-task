@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const Specializations = () => {
   const { courses } = useCourses();
   const [selectedCourse, setSelectedCourse] = useState(false);
+  console.log(courses);
 
   const objOfSelected = selectedCourse
     ? courses.filter((course, i) => i === selectedCourse - 1)[0]
@@ -59,7 +60,7 @@ const Specializations = () => {
             <div className="title_div">{objOfSelected.Specialization}</div>
             {objOfSelected.modules.map((module) => (
               <div className="title_div module_div" key={module}>
-                {module}
+                {module.name}
               </div>
             ))}
           </>

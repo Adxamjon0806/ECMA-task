@@ -72,6 +72,7 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
+    overflow-y: scroll;
     .right_modules {
       position: relative;
       display: flex;
@@ -120,6 +121,17 @@
       background: $body__background;
       color: #000;
     }
+  }
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(171, 171, 171);
+    border-radius: 10px;
+    transition: linear all 150ms;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(101, 101, 101);
   }
 }
 

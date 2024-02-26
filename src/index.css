@@ -425,6 +425,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
+  overflow-y: scroll;
 }
 .specializations .right .right_modules {
   position: relative;
@@ -473,6 +474,17 @@ body {
 .specializations .right .right_modules_clicked {
   background: #eff1f3;
   color: #000;
+}
+.specializations ::-webkit-scrollbar {
+  width: 7px;
+}
+.specializations ::-webkit-scrollbar-thumb {
+  background: rgb(171, 171, 171);
+  border-radius: 10px;
+  transition: linear all 150ms;
+}
+.specializations ::-webkit-scrollbar-thumb:hover {
+  background: rgb(101, 101, 101);
 }
 
 .addOrEdit__Chekkers {
