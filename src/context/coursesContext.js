@@ -31,10 +31,25 @@ const initialState = [
   },
 ];
 
+const modules = [
+  { name: "Java Development", isActive: "INACTIVE" },
+  { name: "Flutter" },
+  { name: "iOS Development" },
+  { name: "Database", isActive: "ACTIVE" },
+  { name: "Java Backend", isActive: "ACTIVE" },
+  { name: "Android" },
+  { name: "Jango", isActive: "ACTIVE" },
+  { name: "Python Development" },
+  { name: ".NET" },
+  { name: "C#" },
+  { name: "Frontend Development" },
+  { name: "Foundation" },
+];
+
 const CoursesProvider = ({ children }) => {
   const [courses, dispatchCourses] = useReducer(reducer, initialState);
   return (
-    <coursesContext.Provider value={{ courses, dispatchCourses }}>
+    <coursesContext.Provider value={{ courses, dispatchCourses, modules }}>
       {children}
     </coursesContext.Provider>
   );

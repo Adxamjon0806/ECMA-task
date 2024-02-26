@@ -5,6 +5,37 @@
   .addOrEdit {
     height: 500px;
     color: #000;
+    .modules_list {
+      width: 100%;
+      height: 60%;
+      overflow-y: scroll;
+      .addOrEdit_modules {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 10px;
+        .modules_dot_module {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+        }
+        .button {
+          @extend .btn;
+        }
+      }
+    }
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgb(171, 171, 171);
+      border-radius: 10px;
+      transition: linear all 150ms;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgb(101, 101, 101);
+    }
   }
   .left {
     display: flex;
@@ -27,7 +58,6 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
-    overflow-y: scroll;
     .right_modules {
       position: relative;
       display: flex;
@@ -40,6 +70,41 @@
       color: #fff;
       font-size: 17px;
       border-radius: 9px;
+      transition: linear all 150ms;
+      .right_modules_btn {
+        position: absolute;
+        right: 8px;
+        top: 9px;
+        width: 35px;
+        height: 80%;
+        border: none;
+        background: $green__color;
+        border-radius: 105px 18px 18px 105px;
+        .modules_btn_p {
+          font-size: 25px;
+          transition: linear all 150ms;
+        }
+        .modules_btn_p_rotated {
+          transform: rotate(45deg);
+        }
+      }
+      .right_modules_btn_clicked {
+        background: $red__color;
+      }
+      .isActive_p {
+        position: absolute;
+        font-size: 11px;
+        left: 10px;
+        bottom: 10px;
+        color: $green__color;
+      }
+      .isActive_p_false {
+        color: $red__color;
+      }
+    }
+    .right_modules_clicked {
+      background: $body__background;
+      color: #000;
     }
   }
 }
@@ -54,5 +119,22 @@
   gap: 10px;
   .button {
     @extend .btn;
+  }
+  .btn_checker {
+    border: 1px solid rgb(189, 189, 189);
+    display: flex;
+    align-items: center;
+    color: #000;
+    .check_p {
+      margin: 0 5px;
+    }
+  }
+  .btn_cancel {
+    color: $red__color;
+    text-decoration: none;
+    background: #ffd3de;
+  }
+  .btn_save {
+    background: $green__color;
   }
 }

@@ -83,7 +83,7 @@ body {
   padding: 20px 0;
 }
 
-.btn, .addOrEdit__Chekkers .button, .table__section .tabs .tabs__search .tabs__search__buttons .add_Specialization, .table__section .tabs .tabs__search .tabs__search__buttons button, .table__section .tabs .tabs__buttons .tabs__userBtn {
+.btn, .addOrEdit__Chekkers .button, .specializations .addOrEdit .modules_list .addOrEdit_modules .button, .table__section .tabs .tabs__search .tabs__search__buttons .add_Specialization, .table__section .tabs .tabs__search .tabs__search__buttons button, .table__section .tabs .tabs__buttons .tabs__userBtn {
   color: #fff;
   display: flex;
   align-items: center;
@@ -91,6 +91,7 @@ body {
   gap: 5px;
   border-radius: 7px;
   border: none;
+  cursor: pointer;
 }
 
 .table__section .tabs {
@@ -234,7 +235,7 @@ body {
   height: 100vh;
 }
 
-.btn, .addOrEdit__Chekkers .button, .table__section .tabs .tabs__buttons .tabs__userBtn, .table__section .tabs .tabs__search .tabs__search__buttons button, .table__section .tabs .tabs__search .tabs__search__buttons .add_Specialization {
+.btn, .addOrEdit__Chekkers .button, .specializations .addOrEdit .modules_list .addOrEdit_modules .button, .table__section .tabs .tabs__buttons .tabs__userBtn, .table__section .tabs .tabs__search .tabs__search__buttons button, .table__section .tabs .tabs__search .tabs__search__buttons .add_Specialization {
   color: #fff;
   display: flex;
   align-items: center;
@@ -242,6 +243,7 @@ body {
   gap: 5px;
   border-radius: 7px;
   border: none;
+  cursor: pointer;
 }
 
 .specializations {
@@ -346,7 +348,7 @@ body {
   color: #000;
 }
 
-.btn, .addOrEdit__Chekkers .button, .table__section .tabs .tabs__buttons .tabs__userBtn, .table__section .tabs .tabs__search .tabs__search__buttons button, .table__section .tabs .tabs__search .tabs__search__buttons .add_Specialization {
+.btn, .addOrEdit__Chekkers .button, .specializations .addOrEdit .modules_list .addOrEdit_modules .button, .table__section .tabs .tabs__buttons .tabs__userBtn, .table__section .tabs .tabs__search .tabs__search__buttons button, .table__section .tabs .tabs__search .tabs__search__buttons .add_Specialization {
   color: #fff;
   display: flex;
   align-items: center;
@@ -354,11 +356,40 @@ body {
   gap: 5px;
   border-radius: 7px;
   border: none;
+  cursor: pointer;
 }
 
 .specializations .addOrEdit {
   height: 500px;
   color: #000;
+}
+.specializations .addOrEdit .modules_list {
+  width: 100%;
+  height: 60%;
+  overflow-y: scroll;
+}
+.specializations .addOrEdit .modules_list .addOrEdit_modules {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+}
+.specializations .addOrEdit .modules_list .addOrEdit_modules .modules_dot_module {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.specializations .addOrEdit ::-webkit-scrollbar {
+  width: 7px;
+}
+.specializations .addOrEdit ::-webkit-scrollbar-thumb {
+  background: rgb(171, 171, 171);
+  border-radius: 10px;
+  transition: linear all 150ms;
+}
+.specializations .addOrEdit ::-webkit-scrollbar-thumb:hover {
+  background: rgb(101, 101, 101);
 }
 .specializations .left {
   display: flex;
@@ -381,7 +412,6 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
-  overflow-y: scroll;
 }
 .specializations .right .right_modules {
   position: relative;
@@ -395,6 +425,41 @@ body {
   color: #fff;
   font-size: 17px;
   border-radius: 9px;
+  transition: linear all 150ms;
+}
+.specializations .right .right_modules .right_modules_btn {
+  position: absolute;
+  right: 8px;
+  top: 9px;
+  width: 35px;
+  height: 80%;
+  border: none;
+  background: #45b26b;
+  border-radius: 105px 18px 18px 105px;
+}
+.specializations .right .right_modules .right_modules_btn .modules_btn_p {
+  font-size: 25px;
+  transition: linear all 150ms;
+}
+.specializations .right .right_modules .right_modules_btn .modules_btn_p_rotated {
+  transform: rotate(45deg);
+}
+.specializations .right .right_modules .right_modules_btn_clicked {
+  background: #ef466f;
+}
+.specializations .right .right_modules .isActive_p {
+  position: absolute;
+  font-size: 11px;
+  left: 10px;
+  bottom: 10px;
+  color: #45b26b;
+}
+.specializations .right .right_modules .isActive_p_false {
+  color: #ef466f;
+}
+.specializations .right .right_modules_clicked {
+  background: #eff1f3;
+  color: #000;
 }
 
 .addOrEdit__Chekkers {
@@ -405,6 +470,23 @@ body {
   justify-content: end;
   align-items: center;
   gap: 10px;
+}
+.addOrEdit__Chekkers .btn_checker {
+  border: 1px solid rgb(189, 189, 189);
+  display: flex;
+  align-items: center;
+  color: #000;
+}
+.addOrEdit__Chekkers .btn_checker .check_p {
+  margin: 0 5px;
+}
+.addOrEdit__Chekkers .btn_cancel {
+  color: #ef466f;
+  text-decoration: none;
+  background: #ffd3de;
+}
+.addOrEdit__Chekkers .btn_save {
+  background: #45b26b;
 }
 
 /*# sourceMappingURL=index.css.map */
