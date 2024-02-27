@@ -4,6 +4,7 @@ const coursesContext = createContext();
 
 const initialState = [
   {
+    id: 1,
     Info: true,
     Specialization: "Frontend",
     Status: true,
@@ -39,11 +40,17 @@ const modules = [
 
 const CoursesProvider = ({ children }) => {
   const [courses, setCourses] = useState(initialState);
-  const [modulesAdd, setModulesAdd] = useState([]);
+  const [action, setAction] = useState(false);
 
   return (
     <coursesContext.Provider
-      value={{ courses, setCourses, modules, modulesAdd, setModulesAdd }}
+      value={{
+        courses,
+        setCourses,
+        modules,
+        action,
+        setAction,
+      }}
     >
       {children}
     </coursesContext.Provider>

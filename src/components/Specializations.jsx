@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 import { useCourses } from "../context/coursesContext";
 import dots_menu from "../assets/dots-menu.png";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Specializations = () => {
-  const { courses } = useCourses();
+  const { courses, setAction } = useCourses();
   const [selectedCourse, setSelectedCourse] = useState(false);
-  console.log(courses);
+  const navigate = useNavigate();
 
   const objOfSelected = selectedCourse
-    ? courses.filter((course, i) => i === selectedCourse - 1)[0]
+    ? courses.filter((_, i) => i === selectedCourse - 1)[0]
     : {};
+
+  function action(course) {
+    setAction(course);
+    navigate("/addOrEdit");
+  }
 
   return (
     <section className="specializations">
@@ -46,9 +51,12 @@ const Specializations = () => {
                 >
                   {course.Status ? "ACTIVE" : "IN ACTIVE"}
                 </button>
-                <Link to={"/addOrEdit"} className="action_btn btn">
+                <button
+                  className="action_btn btn"
+                  onClick={() => action(course)}
+                >
                   <img src={dots_menu} alt="dots_menu" />
-                </Link>
+                </button>
               </div>
             </div>
           ))}

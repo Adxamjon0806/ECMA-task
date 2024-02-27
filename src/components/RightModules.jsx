@@ -1,9 +1,6 @@
 import React from "react";
-import { useCourses } from "../context/coursesContext";
 
-const RightModules = ({ course, isIn }) => {
-  const { modulesAdd, setModulesAdd } = useCourses();
-
+const RightModules = ({ course, isIn, modulesAdd, setModulesAdd }) => {
   function clickModule() {
     if (!isIn) {
       setModulesAdd((prew) => [...prew, course]);

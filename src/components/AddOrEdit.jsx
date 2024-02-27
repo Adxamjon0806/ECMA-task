@@ -7,12 +7,22 @@ import trash_delete from "../assets/trash-delete-bin-2.png";
 import { useNavigate } from "react-router-dom";
 
 const AddOrEdit = () => {
-  const { modules, modulesAdd, setModulesAdd, setCourses } = useCourses();
-  const [isDegree, setIsDegree] = useState(false);
-  const [isActive, setIsActive] = useState(false);
-  const [specialization, setSpecialization] = useState("");
-  const [description, setDescription] = useState("");
+  const { modules, courses, setCourses, action, setAction } = useCourses();
+  const [isDegree, setIsDegree] = useState(action.Info ? action.Info : false);
+  const [isActive, setIsActive] = useState(
+    action.Status ? action.Status : false
+  );
+  const [modulesAdd, setModulesAdd] = useState(
+    action.modules ? action.modules : []
+  );
+  const [specialization, setSpecialization] = useState(
+    action.Specialization ? action.Specialization : ""
+  );
+  const [description, setDescription] = useState(
+    action.description ? action.description : ""
+  );
   const navigate = useNavigate();
+  console.log(action);
 
   function deleteItem(module) {
     const filteredArr = modulesAdd.filter((el) => el.id !== module.id);
@@ -27,19 +37,37 @@ const AddOrEdit = () => {
 
   function cancel() {
     clearAll();
+    setAction(false);
     navigate("/");
   }
 
   function save() {
-    const newCourse = {
+    const course = {
+      id: courses.length + 1,
       Specialization: specialization,
       Info: isDegree,
       Status: isActive,
+      description,
       modules: modulesAdd,
     };
-    setCourses((prew) => [...prew, newCourse]);
-    clearAll();
-    navigate("/");
+    if (action) {
+      const editedArray = courses;
+      course.id = action.id;
+      for (let i = 0; i < courses.length; i++) {
+        const element = courses[i];
+        if (element.id === course.id) {
+          editedArray[i] = course;
+        }
+      }
+      setCourses(editedArray);
+      clearAll();
+      setAction(false);
+      navigate("/");
+    } else {
+      setCourses((prew) => [...prew, course]);
+      clearAll();
+      navigate("/");
+    }
   }
 
   return (
@@ -82,27 +110,53 @@ const AddOrEdit = () => {
           {modules.map((course) => {
             const filtered = modulesAdd.filter((el) => el.id === course.id);
             const isIn = filtered.length === 1 ? true : false;
-            return <RightModules key={course.id} course={course} isIn={isIn} />;
+            return (
+              <RightModules
+                key={course.id}
+                course={course}
+                isIn={isIn}
+                modulesAdd={modulesAdd}
+                setModulesAdd={setModulesAdd}
+              />
+            );
           })}
         </div>
       </section>
       <hr />
       <div className="addOrEdit__Chekkers">
         <button className="btn btn_checker">
-          <input
-            type="checkbox"
-            value={isDegree}
-            onChange={() => setIsDegree(!isDegree)}
-          />
+          {isDegree ? (
+            <input
+              type="checkbox"
+              value={isDegree}
+              onChange={() => setIsDegree(!isDegree)}
+              checked
+            />
+          ) : (
+            <input
+              type="checkbox"
+              value={isDegree}
+              onChange={() => setIsDegree(!isDegree)}
+            />
+          )}
           <p className="check_p">{!isDegree && "No"} Degree</p>
           <img src={filled} alt="filled icon" />
         </button>
         <button className="btn btn_checker">
-          <input
-            type="checkbox"
-            value={isActive}
-            onChange={() => setIsActive(!isActive)}
-          />
+          {isActive ? (
+            <input
+              type="checkbox"
+              value={isActive}
+              onChange={() => setIsActive(!isActive)}
+              checked
+            />
+          ) : (
+            <input
+              type="checkbox"
+              value={isActive}
+              onChange={() => setIsActive(!isActive)}
+            />
+          )}
           <p className="check_p">Active</p>
           <img src={filled} alt="filled icon" />
         </button>
