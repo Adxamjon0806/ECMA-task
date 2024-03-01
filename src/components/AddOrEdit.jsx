@@ -25,7 +25,6 @@ const AddOrEdit = () => {
   const [isSpecialization, setIsSpecialization] = useState(false);
   const [isDescription, setIsDescription] = useState(false);
   const navigate = useNavigate();
-  console.log(action);
 
   function deleteItem(module) {
     const filteredArr = modulesAdd.filter((el) => el.id !== module.id);
@@ -50,14 +49,6 @@ const AddOrEdit = () => {
     setCourses(NewCourses);
     setAction({});
     navigate("/");
-  }
-
-  function isAll() {
-    if (description.length < 10) {
-    } else if (specialization.length === 0) {
-    } else if (modulesAdd.length === 0) {
-      setIsModules(true);
-    }
   }
 
   function save() {

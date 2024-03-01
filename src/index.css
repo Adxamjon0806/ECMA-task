@@ -403,7 +403,7 @@ body {
 .specializations .addOrEdit .clear_all {
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .specializations .addOrEdit .clear_all .clear_all_btn {
   color: #3772ff;
@@ -435,7 +435,7 @@ body {
 .specializations .right .right_modules {
   position: relative;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   padding: 0 0 0 20px;
   width: 200px;
@@ -497,7 +497,7 @@ body {
   height: 55px;
   padding: 15px;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   gap: 10px;
 }
