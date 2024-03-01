@@ -372,6 +372,11 @@ body {
   border-top: 1px solid rgb(213, 213, 213);
   border-bottom: 1px solid rgb(213, 213, 213);
 }
+.specializations .addOrEdit .modules_list .should_modules_add {
+  padding-left: 17px;
+  color: #ef466f;
+  font-size: 25px;
+}
 .specializations .addOrEdit .modules_list .addOrEdit_modules {
   width: 100%;
   display: flex;
@@ -512,6 +517,9 @@ body {
 }
 .addOrEdit__Chekkers .btn_save {
   background: #45b26b;
+}
+.addOrEdit__Chekkers .btn_delete {
+  background: #ef466f;
 }
 
 /*# sourceMappingURL=index.css.map */

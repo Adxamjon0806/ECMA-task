@@ -21,6 +21,9 @@ const AddOrEdit = () => {
   const [description, setDescription] = useState(
     action.description ? action.description : ""
   );
+  const [isModules, setIsModules] = useState(false);
+  const [isSpecialization, setIsSpecialization] = useState(false);
+  const [isDescription, setIsDescription] = useState(false);
   const navigate = useNavigate();
   console.log(action);
 
@@ -41,32 +44,52 @@ const AddOrEdit = () => {
     navigate("/");
   }
 
+  function Delete() {
+    const { id } = action;
+    const NewCourses = courses.filter((course) => course.id !== id);
+    setCourses(NewCourses);
+    setAction({});
+    navigate("/");
+  }
+
+  function isAll() {
+    if (description.length < 10) {
+    } else if (specialization.length === 0) {
+    } else if (modulesAdd.length === 0) {
+      setIsModules(true);
+    }
+  }
+
   function save() {
-    const course = {
-      id: courses.length + 1,
-      Specialization: specialization,
-      Info: isDegree,
-      Status: isActive,
-      description,
-      modules: modulesAdd,
-    };
-    if (action) {
-      const editedArray = courses;
-      course.id = action.id;
-      for (let i = 0; i < courses.length; i++) {
-        const element = courses[i];
-        if (element.id === course.id) {
-          editedArray[i] = course;
-        }
-      }
-      setCourses(editedArray);
-      clearAll();
-      setAction(false);
-      navigate("/");
+    if (modulesAdd.length === 0) {
+      setIsModules(true);
     } else {
-      setCourses((prew) => [...prew, course]);
-      clearAll();
-      navigate("/");
+      const course = {
+        id: courses.length + 1,
+        Specialization: specialization,
+        Info: isDegree,
+        Status: isActive,
+        description,
+        modules: modulesAdd,
+      };
+      if (action) {
+        const editedArray = courses;
+        course.id = action.id;
+        for (let i = 0; i < courses.length; i++) {
+          const element = courses[i];
+          if (element.id === course.id) {
+            editedArray[i] = course;
+          }
+        }
+        setCourses(editedArray);
+        clearAll();
+        setAction(false);
+        navigate("/");
+      } else {
+        setCourses((prew) => [...prew, course]);
+        clearAll();
+        navigate("/");
+      }
     }
   }
 
@@ -80,6 +103,9 @@ const AddOrEdit = () => {
             value={specialization}
             onChange={(e) => setSpecialization(e.target.value)}
           />
+          {isSpecialization && (
+            <p className="should_specialization">Please enter Specialization</p>
+          )}
           <label htmlFor="">Description</label>
           <input
             type="text"
@@ -87,7 +113,13 @@ const AddOrEdit = () => {
             onChange={(e) => setDescription(e.target.value)}
             className="desc_input"
           />
+          {isDescription && (
+            <p className="should_desc">Please enter Description</p>
+          )}
           <div className="modules_list">
+            {isModules && (
+              <p className="should_modules_add">You should add courses</p>
+            )}
             {modulesAdd.map((module) => (
               <div key={module} className="addOrEdit_modules">
                 <div className="modules_dot_module">
@@ -165,6 +197,9 @@ const AddOrEdit = () => {
         </button>
         <button className="btn btn_save" onClick={save}>
           Save
+        </button>
+        <button className="btn btn_delete" onClick={Delete}>
+          Delete Course
         </button>
       </div>
     </>

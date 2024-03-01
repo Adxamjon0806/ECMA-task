@@ -13,6 +13,11 @@
       overflow-y: scroll;
       border-top: 1px solid rgb(213, 213, 213);
       border-bottom: 1px solid rgb(213, 213, 213);
+      .should_modules_add {
+        padding-left: 17px;
+        color: $red__color;
+        font-size: 25px;
+      }
       .addOrEdit_modules {
         width: 100%;
         display: flex;
@@ -162,5 +167,8 @@
   }
   .btn_save {
     background: $green__color;
+  }
+  .btn_delete {
+    background: $red__color;
   }
 }

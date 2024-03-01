@@ -4,8 +4,10 @@ import user from "../assets/user.png";
 import search from "../assets/search.png";
 import arrow from "../assets/Arrow.png";
 import { Link } from "react-router-dom";
+import { useCourses } from "../context/coursesContext";
 
 const Tabs = () => {
+  const { setAction } = useCourses();
   const [clikced, setClikced] = useState(7);
   return (
     <div className="tabs">
